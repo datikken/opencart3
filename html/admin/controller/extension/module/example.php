@@ -102,9 +102,6 @@ class ControllerExtensionModuleExample extends Controller
         $data['column_left'] = $this->load->controller('common/column_left');
         $data['footer'] = $this->load->controller('common/footer');
 
-        // Example usage of Symfony VarDumper
-        VarDumper::dump($data);
-
         $this->response->setOutput($this->load->view('extension/module/example', $data));
     }
 
