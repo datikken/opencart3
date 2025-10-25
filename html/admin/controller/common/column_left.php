@@ -1,6 +1,8 @@
 <?php
-class ControllerCommonColumnLeft extends Controller {
-	public function index() {
+class ControllerCommonColumnLeft extends Controller
+{
+	public function index()
+	{
 		if (isset($this->request->get['user_token']) && isset($this->session->data['user_token']) && ($this->request->get['user_token'] == $this->session->data['user_token'])) {
 			$this->load->language('common/column_left');
 
@@ -167,6 +169,15 @@ class ControllerCommonColumnLeft extends Controller {
 				$marketplace[] = array(
 					'name'	   => $this->language->get('text_event'),
 					'href'     => $this->url->link('marketplace/event', 'user_token=' . $this->session->data['user_token'], true),
+					'children' => array()
+				);
+			}
+
+			// Example Module
+			if ($this->user->hasPermission('access', 'extension/module/example')) {
+				$marketplace[] = array(
+					'name'	   => 'Example Module',
+					'href'     => $this->url->link('extension/module/example', 'user_token=' . $this->session->data['user_token'], true),
 					'children' => array()
 				);
 			}
