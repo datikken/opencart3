@@ -46,7 +46,8 @@ if ((isset($_SERVER['HTTPS']) && (($_SERVER['HTTPS'] == 'on') || ($_SERVER['HTTP
 }
 
 // Modification Override
-function modification($filename) {
+function modification($filename)
+{
 	if (defined('DIR_CATALOG')) {
 		$file = DIR_MODIFICATION . 'admin/' .  substr($filename, strlen(DIR_APPLICATION));
 	} elseif (defined('DIR_OPENCART')) {
@@ -71,7 +72,12 @@ if (defined('DIR_STORAGE') && is_file(DIR_STORAGE . 'vendor/autoload.php')) {
 	require_once(DIR_STORAGE . 'vendor/autoload.php');
 }
 
-function library($class) {
+if (is_file(DIR_SYSTEM . 'vendor/autoload.php')) {
+	require_once(DIR_SYSTEM . 'vendor/autoload.php');
+}
+
+function library($class)
+{
 	$file = DIR_SYSTEM . 'library/' . str_replace('\\', '/', strtolower($class)) . '.php';
 
 	if (is_file($file)) {
@@ -100,6 +106,7 @@ require_once(modification(DIR_SYSTEM . 'engine/proxy.php'));
 require_once(DIR_SYSTEM . 'helper/general.php');
 require_once(DIR_SYSTEM . 'helper/utf8.php');
 
-function start($application_config) {
-	require_once(DIR_SYSTEM . 'framework.php');	
+function start($application_config)
+{
+	require_once(DIR_SYSTEM . 'framework.php');
 }

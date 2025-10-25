@@ -2095,3 +2095,5 @@
 2025-10-23 10:45:54 - PHP Warning:  copy(/var/www/storage/vendor/twig/twig/lib/Twig/Node/Expression/Unary/Neg.php): failed to open stream: No such file or directory in /var/www/html/admin/controller/common/security.php on line 106
 2025-10-23 10:45:54 - PHP Warning:  copy(/var/www/storage/vendor/twig/twig/lib/Twig/Node/Expression/Unary/Not.php): failed to open stream: No such file or directory in /var/www/html/admin/controller/common/security.php on line 106
 2025-10-23 10:45:54 - PHP Warning:  copy(/var/www/storage/vendor/twig/twig/lib/Twig/Node/Expression/Unary/Pos.php): failed to open stream: No such file or directory in /var/www/html/admin/controller/common/security.php on line 106
+2025-10-25 12:01:19 - PHP Warning:  require_once(../../../upload/system/storage/vendor/autoload.php): failed to open stream: No such file or directory in /var/www/html/admin/controller/extension/module/example.php on line 4
+2025-10-25 12:01:22 - PHP Warning:  require_once(../../../upload/system/storage/vendor/autoload.php): failed to open stream: No such file or directory in /var/www/html/admin/controller/extension/module/example.php on line 4

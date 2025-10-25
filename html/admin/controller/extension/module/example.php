@@ -1,4 +1,7 @@
 <?php
+
+use Symfony\Component\VarDumper\VarDumper;
+
 class ControllerExtensionModuleExample extends Controller
 {
     private $error = array();
@@ -98,6 +101,9 @@ class ControllerExtensionModuleExample extends Controller
         $data['header'] = $this->load->controller('common/header');
         $data['column_left'] = $this->load->controller('common/column_left');
         $data['footer'] = $this->load->controller('common/footer');
+
+        // Example usage of Symfony VarDumper
+        VarDumper::dump($data);
 
         $this->response->setOutput($this->load->view('extension/module/example', $data));
     }
